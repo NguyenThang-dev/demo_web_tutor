@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f7fb" />
+    <meta name="description" content="Lộ trình 12 tuần học Python, C, C++, HTML và JavaScript từ nền tảng đến website tương tác." />
+    <title>Học lập trình từ nền tảng</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#" id="brandHome" aria-label="Về tổng quan khóa học">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span class="brand-copy"><strong>Học lập trình</strong><small>Từ nền tảng đến sản phẩm</small></span>
+        </a>
+        <div class="topbar-actions">
+          <a class="top-link" href="#lesson-1-1" data-lesson="1-1">Mở bài học đầu tiên <span aria-hidden="true">→</span></a>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Mở danh sách bài học">☰</button>
+        </div>
+      </header>
+
+      <div class="page-layout">
+        <aside class="sidebar" id="sidebar" aria-label="Điều hướng lộ trình">
+          <div class="sidebar-intro">
+            <p class="eyebrow">LỘ TRÌNH CỦA BẠN</p>
+            <h2>12 tuần nền tảng</h2>
+            <p>72 buổi học, đi từ tư duy lập trình đến một website tương tác.</p>
+          </div>
+          <label class="search-box" for="lessonSearch">
+            <span aria-hidden="true">⌕</span>
+            <input id="lessonSearch" type="search" placeholder="Tìm bài học..." autocomplete="off" />
+            <kbd>/</kbd>
+          </label>
+          <button class="overview-link active" id="overviewButton" type="button">
+            <span class="nav-icon" aria-hidden="true">⌂</span>
+            <span>Tổng quan</span>
+          </button>
+          <nav class="week-nav" id="weekNav" aria-label="Các tuần học"></nav>
+          <div class="sidebar-note">
+            <span class="note-icon" aria-hidden="true">✦</span>
+            <p><strong>Học từng bước</strong><br />Đọc bài, thử ví dụ, rồi tự giải bài tập.</p>
+          </div>
+        </aside>
+
+        <main class="main-content" id="mainContent" tabindex="-1">
+          <section class="overview-view" id="overviewView" aria-labelledby="overviewTitle">
+            <div class="hero">
+              <div class="hero-copy">
+                <p class="eyebrow light">LỘ TRÌNH 12 TUẦN</p>
+                <h1 id="overviewTitle">Học lập trình<br /><span>từ những điều cơ bản</span></h1>
+                <p class="hero-description">Nắm chắc nền tảng, rèn cách tìm lỗi và tự xây một website nhỏ bằng những bước vừa sức.</p>
+                <button class="primary-button" id="startButton" type="button">Bắt đầu Buổi 1 <span aria-hidden="true">→</span></button>
+              </div>
+              <div class="hero-art" aria-hidden="true">
+                <div class="code-window">
+                  <div class="window-dots"><i></i><i></i><i></i></div>
+                  <div class="code-line"><span class="code-number">1</span><span class="code-blue">ten</span> <span class="code-muted">=</span> <span class="code-green">"An"</span></div>
+                  <div class="code-line"><span class="code-number">2</span><span class="code-purple">print</span><span class="code-muted">(</span><span class="code-blue">ten</span><span class="code-muted">)</span></div>
+                  <div class="code-output"><span>〉</span> An</div>
+                </div>
+                <div class="floating-note">Thử, sai, hiểu<br /><b>rồi thử lại.</b></div>
+                <div class="hero-orbit orbit-one"></div>
+                <div class="hero-orbit orbit-two"></div>
+              </div>
+            </div>
+
+            <div class="stat-row" aria-label="Thông tin khóa học">
+              <div class="stat-card"><span class="stat-icon blue-icon">◷</span><div><strong>12 tuần</strong><small>lộ trình học</small></div></div>
+              <div class="stat-card"><span class="stat-icon green-icon">▤</span><div><strong>72 buổi</strong><small>từ dễ đến khó</small></div></div>
+              <div class="stat-card"><span class="stat-icon amber-icon">⌘</span><div><strong>5 ngôn ngữ</strong><small>học theo từng chặng</small></div></div>
+            </div>
+
+            <section class="roadmap-section" aria-labelledby="roadmapTitle">
+              <div class="section-heading">
+                <div><p class="eyebrow">BẢN ĐỒ HỌC TẬP</p><h2 id="roadmapTitle">Lộ trình từng tuần</h2></div>
+                <p>Chọn một tuần để xem nội dung và mở buổi học.</p>
+              </div>
+              <div class="week-grid" id="weekGrid"></div>
+            </section>
+            <footer class="page-footer">Học chậm mà chắc. Mỗi buổi, tự giải thích lại điều mình vừa học.</footer>
+          </section>
+
+          <section class="lesson-view" id="lessonView" hidden aria-labelledby="lessonTitle">
+            <div class="breadcrumbs"><button type="button" id="backToOverview">Lộ trình</button><span aria-hidden="true">/</span><span id="crumbWeek">Tuần 1</span><span aria-hidden="true">/</span><span id="crumbDay">Buổi 1</span></div>
+            <div class="lesson-heading">
+              <div><div class="lesson-labels"><span class="week-pill" id="weekPill">TUẦN 1</span><span class="lesson-time">◷ 55 phút</span></div><h1 id="lessonTitle"></h1><p class="lesson-goal" id="lessonGoal"></p></div>
+              <div class="lesson-count" id="lessonCount">01 <span>/ 72</span></div>
+            </div>
+            <div class="lesson-layout">
+              <article class="lesson-article">
+                <section class="lesson-slides" id="lessonSlides" aria-labelledby="slidesTitle">
+                  <div class="slides-heading">
+                    <div><p class="eyebrow">SLIDE BÀI HỌC</p><h2 id="slidesTitle">Học theo từng trang</h2></div>
+                    <span class="slide-count" id="slideCount" aria-live="polite">Slide 1 / 6</span>
+                  </div>
+                  <div class="slide-progress-track" role="progressbar" aria-label="Tiến độ slide" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1">
+                    <span class="slide-progress-fill" id="slideProgressFill"></span>
+                  </div>
+                  <article class="slide-stage" id="slideStage" tabindex="0" aria-live="polite" aria-atomic="true">
+                    <span class="slide-eyebrow" id="slideEyebrow"></span>
+                    <h3 id="slideTitle"></h3>
+                    <p class="slide-body" id="slideBody"></p>
+                    <div class="slide-code-wrap" id="slideCodeWrap" hidden><pre><code id="slideCode"></code></pre></div>
+                    <div class="slide-detail-wrap" id="slideDetailWrap" hidden>
+                      <p class="slide-detail-label" id="slideDetailLabel"></p>
+                      <p class="slide-detail" id="slideDetail"></p>
+                    </div>
+                  </article>
+                  <div class="slide-controls">
+                    <button class="slide-nav-button" id="previousSlideButton" type="button" aria-label="Slide trước">← Trước</button>
+                    <div class="slide-dots" id="slideDots" role="group" aria-label="Chọn slide"></div>
+                    <button class="slide-nav-button next-slide-button" id="nextSlideButton" type="button" aria-label="Slide tiếp theo">Tiếp →</button>
+                  </div>
+                </section>
+                <section class="ai-tutor" id="aiTutor" aria-labelledby="aiTutorTitle">
+                  <div class="ai-header">
+                    <span class="ai-mark" aria-hidden="true">✦</span>
+                    <div class="ai-title-wrap">
+                      <p class="eyebrow">GIA SƯ LẬP TRÌNH</p>
+                      <h2 id="aiTutorTitle">Hỏi đáp với AI</h2>
+                      <p>Hỏi về phần lý thuyết hoặc ví dụ. AI sẽ gợi ý từng bước trước khi đưa lời giải.</p>
+                    </div>
+                    <span class="ai-status" id="aiStatus" role="status">Đang kết nối...</span>
+                  </div>
+                  <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-relevant="additions text">
+                    <div class="chat-welcome" id="chatWelcome">Bạn có thể hỏi: “Dấu = trong ví dụ dùng để làm gì?”</div>
+                  </div>
+                  <div class="quick-prompts" id="quickPrompts">
+                    <button type="button" data-prompt="Mình chưa hiểu ý chính của bài này. Hãy giải thích bằng một ví dụ thật nhỏ, chưa đưa lời giải bài tập.">Giải thích dễ hơn</button>
+                    <button type="button" data-prompt="Hãy giúp mình lần theo ví dụ trong bài từng dòng một. Đừng nói kết quả ngay, hãy hỏi mình dự đoán trước.">Lần theo ví dụ</button>
+                    <button type="button" data-prompt="Mình gặp lỗi khi tự làm bài. Hãy hỏi mình cần gửi đoạn mã và thông báo lỗi nào để cùng tìm nguyên nhân.">Mình đang gặp lỗi</button>
+                  </div>
+                  <form class="chat-form" id="chatForm">
+                    <label class="sr-only" for="chatInput">Câu hỏi của bạn</label>
+                    <textarea id="chatInput" maxlength="1500" rows="2" placeholder="Gõ câu hỏi về bài học..." required></textarea>
+                    <div class="chat-form-footer">
+                      <p id="chatHelpText">Tối đa 1.500 ký tự. Không nhập API key vào đây.</p>
+                      <button class="chat-send" id="chatSend" type="submit">Gửi câu hỏi <span aria-hidden="true">↑</span></button>
+                    </div>
+                  </form>
+                </section>
+                <section class="understanding-check" id="understandingCheck" aria-labelledby="checkTitle">
+                  <div class="check-icon" aria-hidden="true">?</div>
+                  <div class="check-content">
+                    <p class="eyebrow">TRƯỚC KHI LÀM BÀI</p>
+                    <h2 id="checkTitle">Bạn đã hiểu rõ nội dung chưa?</h2>
+                    <p>Đọc slide và ví dụ trước. Nếu còn chỗ chưa rõ, hãy hỏi AI trong khung Hỏi đáp phía trên.</p>
+                    <div class="check-actions">
+                      <button class="secondary-button" id="needHelpButton" type="button">Mình cần giải thích lại</button>
+                      <button class="check-confirm-button" id="understoodButton" type="button">Mình đã hiểu, mở bài tập →</button>
+                    </div>
+                    <p class="check-help" id="checkpointHelp" role="status" hidden>Hãy nhập phần chưa rõ vào khung Hỏi đáp AI phía trên. Mình sẽ gợi ý trước khi bạn làm bài.</p>
+                    <p class="check-success" id="checkpointSuccess" role="status" hidden>Bài tập đã mở. Hãy tự làm trước, mình sẽ gợi ý nếu bạn cần.</p>
+                  </div>
+                </section>
+                <section class="content-block exercise-block" id="exerciseBlock" hidden>
+                  <div class="block-heading"><span class="block-icon exercise-icon">✎</span><div><p class="eyebrow">LUYỆN TẬP</p><h2>5 bài từ dễ đến khó</h2></div></div>
+                  <p class="exercise-intro">Hãy tự làm trước. Trang này không hiện lời giải để bạn có thời gian suy nghĩ.</p>
+                  <ol class="exercise-list" id="exerciseList"></ol>
+                </section>
+                <section class="reflection-box">
+                  <span class="reflection-star" aria-hidden="true">✦</span>
+                  <div><p class="eyebrow">TỰ CỦNG CỐ</p><h2 id="reflectionTitle">Giải thích lại bằng lời của bạn</h2><p id="reflectionPrompt"></p></div>
+                </section>
+                <div class="lesson-navigation"><button class="secondary-button" id="previousButton" type="button">← Buổi trước</button><button class="primary-button" id="nextButton" type="button">Buổi tiếp theo →</button></div>
+              </article>
+              <aside class="lesson-aside" aria-label="Tóm tắt buổi học">
+                <div class="aside-card">
+                  <p class="eyebrow">TRONG BUỔI NÀY</p>
+                  <div class="aside-topic"><span class="topic-dot dot-blue"></span><span id="asideTopic"></span></div>
+                  <div class="aside-divider"></div>
+                  <p class="eyebrow">KẾT QUẢ MONG ĐỢI</p>
+                  <p class="aside-goal" id="asideGoal"></p>
+                  <div class="aside-divider"></div>
+                  <a class="aside-slide" id="lessonSlideLink" href="#lessonSlides">✦ Xem bộ slide <span>6 trang</span></a>
+                  <p class="aside-reminder">Nếu chưa rõ, hãy hỏi AI trong khung Hỏi đáp của bài học.</p>
+                </div>
+              </aside>
+            </div>
+            <footer class="page-footer">Một bài tập tự giải được sẽ giúp bạn nhớ lâu hơn một lời giải chép lại.</footer>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="course-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
